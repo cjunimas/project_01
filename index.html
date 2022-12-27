@@ -3,5 +3,21 @@
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+  
+  fetch("https://chongcj-fish.hf.space/run/predict", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    data: [
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==",
+	]
+  })})
+.then(r => r.json())
+.then(
+  r => {
+    let data = r.data;
+  }
+)
+  
 </body>
 </html>
