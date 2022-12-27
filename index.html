@@ -4,6 +4,9 @@
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
   
+<script>
+	async function loaded(reader) {
+	
   fetch("https://chongcj-fish.hf.space/run/predict", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -18,6 +21,15 @@
     let data = r.data;
   }
 )
-  
+	}
+	
+	function read() {
+		const reader = new FileReader();
+		reader.addEventListener('load', () => loaded(reader))
+		reader.readAsDataURL(photo.files[0]);
+	}
+	photo.addEventListener('input', read);
+	
+</script>
 </body>
 </html>
